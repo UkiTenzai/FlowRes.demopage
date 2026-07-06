@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FlowRep</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Nunito:600,700,800,900">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background: #f7f8fb;
+            font-family: Lato, sans-serif;
+        }
+
+        .publication-title {
+            line-height: 1.25;
+        }
+
+        .audio-note {
+            font-family: "Google Sans Rounded", "Nunito", "Arial Rounded MT Bold", "Google Sans", "Noto Sans", Arial, sans-serif;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .audio-section-title,
+        .demo-table th {
+            font-family: "Google Sans Rounded", "Nunito", "Arial Rounded MT Bold", "Google Sans", "Noto Sans", Arial, sans-serif;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .demo-table th,
+        .demo-table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .demo-table audio {
+            width: 100%;
+            min-width: 140px;
+            max-width: 100%;
+        }
+
+        .demo-table th {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="column has-text-centered">
+        <h3 class="title is-2 publication-title">
+            <b>Repair-Priority Guided Endpoint Flow Postfilter for Noise-Robust Neural Speech Codecs</b>
+        </h3>
+    </div>
+</div>
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+            <h2 class="title is-3">Overview</h2>
+        </div>
+    </div>
+    <p style="font-size: 18px;">
+        Noise-robust neural speech codecs often suffer from perceptual degradation at low bitrates and low
+        signal-to-noise ratios. While generative postfilters can improve quality, they typically perform uniform
+        global restoration, ignoring perceptually critical regions that remain severely distorted. In this letter,
+        we propose FlowRep, a repair-priority guided endpoint flow postfilter for noise-robust speech codecs.
+        Specifically, a Repair-Priority Estimator predicts a priority map to reweight the training objective,
+        guiding the flow model to focus on regions requiring critical restoration. Furthermore, we formulate
+        post-enhancement as endpoint flow matching. Through direct prediction of the clean spectral target from
+        intermediate states, this formulation naturally accommodates metric-oriented objectives and provides a
+        flexible quality-complexity trade-off via adjustable inference steps. Experimental results demonstrate
+        that our method significantly improves the perceptual quality and intelligibility of codec-decoded speech,
+        especially under challenging low-SNR conditions.
+    </p>
+</div>
+
+<div class="has-text-centered" style="margin-top:1rem;">
+    <a href="thesis/Repair-Priority Guided Endpoint Flow Postfilter for Noise-Robust Neural Speech Codecs.pdf"
+       download="paper.pdf" class="button is-primary">
+        <span class="icon"><i class="fas fa-file-pdf"></i></span>
+        <span>Download PDF</span>
+    </a>
+</div>
+
+<div class="container pt-4 mt-4 shadow p-4 mb-5 bg-white rounded">
+    <p class="has-text-centered audio-note" style="font-size: 18px; margin: 0;">
+        The following audio samples show speech enhancement results for noisy speech inputs.
+    </p>
+</div>
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <section>
+        <h3 class="title is-3 audio-section-title">Noisy Input & Clean Reference</h3>
+        <div class="table-responsive pt-3">
+            <table class="table table-hover pt-2 demo-table">
+                <thead>
+                    <tr>
+                        <th>noisy input</th>
+                        <th>clean reference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><audio controls preload="none" src="audios/input/noisy/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/input/clean/401.wav"></audio></td>
+                    </tr>
+                    <tr>
+                        <td><audio controls preload="none" src="audios/input/noisy/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/input/clean/542.wav"></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="pt-5">
+        <h3 class="title is-3 audio-section-title">1 kbps</h3>
+        <div class="table-responsive pt-3">
+            <table class="table table-hover pt-2 demo-table">
+                <thead>
+                    <tr>
+                        <th>FreqCodec</th>
+                        <th>NCSN++</th>
+                        <th>ScoreDec</th>
+                        <th>FlowDec</th>
+                        <th>FlowRep</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><audio controls preload="none" src="audios/1k/freqcodec/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/ncsnpp/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/scoredec/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/flowdec/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/flowrep/401.wav"></audio></td>
+                    </tr>
+                    <tr>
+                        <td><audio controls preload="none" src="audios/1k/freqcodec/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/ncsnpp/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/scoredec/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/flowdec/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/flowrep/542.wav"></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="pt-5">
+        <h3 class="title is-3 audio-section-title">6 kbps</h3>
+        <div class="table-responsive pt-3">
+            <table class="table table-hover pt-2 demo-table">
+                <thead>
+                    <tr>
+                        <th>FreqCodec</th>
+                        <th>NCSN++</th>
+                        <th>ScoreDec</th>
+                        <th>FlowDec</th>
+                        <th>FlowRep</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><audio controls preload="none" src="audios/6k/freqcodec/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/ncsnpp/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/scoredec/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/flowdec/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/flowrep/401.wav"></audio></td>
+                    </tr>
+                    <tr>
+                        <td><audio controls preload="none" src="audios/6k/freqcodec/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/ncsnpp/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/scoredec/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/flowdec/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/flowrep/542.wav"></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+
+</article>
+</main>
+</div>
+</body>
+</html>

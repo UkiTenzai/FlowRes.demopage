@@ -1,0 +1,4 @@
+speech	noise	output	snr_db	sample_rate	duration_sec
+114.wav	7h3ejIwXNVU.wav	114_snr5db_7h3ejIwXNVU.wav	5	16000	4.120000
+401.wav	_0pZSdkuGzs.wav	401_snr5db__0pZSdkuGzs.wav	5	16000	5.909937
+542.wav	cut_20260704_134656.wav	542_snr5db_cut_20260704_134656.wav	5	16000	5.940000
