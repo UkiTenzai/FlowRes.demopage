@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>FlowRep</title>
+    <title>FlowRes</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Nunito:600,700,800,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -82,7 +82,7 @@
         Noise-robust neural speech codecs often suffer from perceptual degradation at low bitrates and low
         signal-to-noise ratios. While generative postfilters can improve quality, they typically perform uniform
         global restoration, ignoring perceptually critical regions that remain severely distorted. In this letter,
-        we propose FlowRep, a repair-priority guided endpoint flow postfilter for noise-robust speech codecs.
+        we propose FlowRes, a repair-priority guided endpoint flow postfilter for noise-robust speech codecs.
         Specifically, a Repair-Priority Estimator predicts a priority map to reweight the training objective,
         guiding the flow model to focus on regions requiring critical restoration. Furthermore, we formulate
         post-enhancement as endpoint flow matching. Through direct prediction of the clean spectral target from
@@ -142,7 +142,7 @@
                         <th>NCSN++</th>
                         <th>ScoreDec</th>
                         <th>FlowDec</th>
-                        <th>FlowRep</th>
+                        <th>FlowRes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -151,14 +151,14 @@
                         <td><audio controls preload="none" src="audios/1k/ncsnpp/401.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/1k/scoredec/401.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/1k/flowdec/401.wav"></audio></td>
-                        <td><audio controls preload="none" src="audios/1k/flowrep/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/flowres/401.wav"></audio></td>
                     </tr>
                     <tr>
                         <td><audio controls preload="none" src="audios/1k/freqcodec/542.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/1k/ncsnpp/542.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/1k/scoredec/542.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/1k/flowdec/542.wav"></audio></td>
-                        <td><audio controls preload="none" src="audios/1k/flowrep/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/1k/flowres/542.wav"></audio></td>
                     </tr>
                 </tbody>
             </table>
@@ -175,7 +175,7 @@
                         <th>NCSN++</th>
                         <th>ScoreDec</th>
                         <th>FlowDec</th>
-                        <th>FlowRep</th>
+                        <th>FlowRes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -184,14 +184,14 @@
                         <td><audio controls preload="none" src="audios/6k/ncsnpp/401.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/6k/scoredec/401.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/6k/flowdec/401.wav"></audio></td>
-                        <td><audio controls preload="none" src="audios/6k/flowrep/401.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/flowres/401.wav"></audio></td>
                     </tr>
                     <tr>
                         <td><audio controls preload="none" src="audios/6k/freqcodec/542.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/6k/ncsnpp/542.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/6k/scoredec/542.wav"></audio></td>
                         <td><audio controls preload="none" src="audios/6k/flowdec/542.wav"></audio></td>
-                        <td><audio controls preload="none" src="audios/6k/flowrep/542.wav"></audio></td>
+                        <td><audio controls preload="none" src="audios/6k/flowres/542.wav"></audio></td>
                     </tr>
                 </tbody>
             </table>
