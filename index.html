@@ -75,21 +75,21 @@
 <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
     <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths">
-            <h2 class="title is-3">Overview</h2>
+            <h2 class="title is-3">Abstract</h2>
         </div>
     </div>
     <p style="font-size: 18px;">
         Noise-robust neural speech codecs often suffer from perceptual degradation at low bitrates and low
-        signal-to-noise ratios. While generative postfilters can improve quality, they typically perform uniform
-        global restoration, ignoring perceptually critical regions that remain severely distorted. In this letter,
-        we propose FlowRes, a repair-priority guided endpoint flow postfilter for noise-robust speech codecs.
-        Specifically, a Repair-Priority Estimator predicts a priority map to reweight the training objective,
-        guiding the flow model to focus on regions requiring critical restoration. Furthermore, we formulate
-        post-enhancement as endpoint flow matching. Through direct prediction of the clean spectral target from
-        intermediate states, this formulation naturally accommodates metric-oriented objectives and provides a
-        flexible quality-complexity trade-off via adjustable inference steps. Experimental results demonstrate
-        that our method significantly improves the perceptual quality and intelligibility of codec-decoded speech,
-        especially under challenging low-SNR conditions.
+        signal-to-noise ratios. While generative postfilters can improve quality, they typically overlook the
+        varying distortion severity across time-frequency regions, limiting targeted restoration of perceptually
+        critical regions. In this letter, we propose FlowRes, a restoration-importance-guided endpoint flow matching
+        postfilter for noise-robust speech codecs. Specifically, a Restoration-Importance Predictor predicts an
+        importance map to reweight the training objective, guiding the flow model to focus on regions requiring
+        targeted restoration. Furthermore, we formulate post-decoding restoration as endpoint flow matching. By
+        enabling direct prediction of the clean spectral target from intermediate states, this formulation naturally
+        accommodates metric-oriented objectives and supports high-quality few-step restoration. Experimental results
+        demonstrate that our method consistently improves the perceptual quality and intelligibility of codec-decoded
+        speech, especially under challenging low-SNR conditions.
     </p>
 </div>
 
